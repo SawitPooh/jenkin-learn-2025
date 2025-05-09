@@ -20,7 +20,7 @@ pipeline {
 
     stage("Push") {
       steps {
-        withCredentials([usernamePassword(credentialsId: "github-token", usernameVariable: "GITHUB_USERNAME", passwordVariable: "GITHUB_PERSONAL_ACCESS_TOKEN")]) {
+        withCredentials([usernamePassword(credentialsId: "my-jenkins", usernameVariable: "GITHUB_USERNAME", passwordVariable: "GITHUB_PERSONAL_ACCESS_TOKEN")]) {
           sh """
             echo ${GITHUB_USERNAME}
             echo ${GITHUB_PERSONAL_ACCESS_TOKEN}
